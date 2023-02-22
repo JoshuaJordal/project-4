@@ -52,7 +52,7 @@ def open_time(control_dist_km, brevet_dist_km, brevet_start_time):
          time += difference[i] / speeds
          break
       else:
-         remainder = control_dist_km - distances[i - 1]
+         remainder = control_dist_km -  (0 if i == 0 else distances[i - 1])
          speeds = speed(dist)[1]
          time += remainder / speeds
          break
@@ -90,7 +90,7 @@ def close_time(control_dist_km, brevet_dist_km, brevet_start_time):
          time += difference[i] / speeds
          break
       else:
-         remainder = control_dist_km - distances[i - 1]
+         remainder = control_dist_km -  (0 if i == 0 else distances[i - 1])
          speeds = speed(dist)[0]
          time += remainder / speeds
          break
